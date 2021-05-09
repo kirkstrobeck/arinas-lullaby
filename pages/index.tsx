@@ -500,12 +500,7 @@ ul {
             This mother’s day, I wanted to share a gift to all moms, especially
             my wife (Arina) and my mom (Kay).
           </p>
-          <p>
-            When I was a little kid, my kind, caring, and confident mom would
-            sing lullabies to me. It was a time set aside for peace and comfort;
-            She was the inspiration for this work.
-          </p>
-          <p
+          <div
             style={{
               background: '#272723',
               borderRadius: 3,
@@ -515,11 +510,16 @@ ul {
             }}
           >
             <Image
-              height={400}
+              height={450}
               layout="intrinsic"
               src="/images/kay.jpg"
-              width={400}
+              width={450}
             />
+          </div>
+          <p>
+            When I was a little kid, my kind, caring, and confident mom would
+            sing lullabies to me. It was a time set aside for peace and comfort;
+            She was the inspiration for this work.
           </p>
           <p>
             Now that I get to be a dad, I’m on the other side putting my
@@ -528,14 +528,9 @@ ul {
             for us. My wife sings it too; it’s put our kids to sleep many times.
             😴
           </p>
-          <p>
-            It’s a special memory from our fam, which wouldn’t be anything
-            without my beautiful, strong, and caring wife, so the work is
-            dedicated to her, hence “Arina’s lullaby.”
-          </p>
-          {/* <p
+          <div
             style={{
-              background: '#272723',
+              background: '#959893',
               borderRadius: 3,
               lineHeight: 0,
               overflow: 'hidden',
@@ -543,12 +538,17 @@ ul {
             }}
           >
             <Image
-              height={400}
+              height={450}
               layout="intrinsic"
-              src="/images/kay.jpg"
-              width={400}
+              src="/images/arina.jpg"
+              width={450}
             />
-          </p> */}
+          </div>
+          <p>
+            It’s a special memory from our fam, which wouldn’t be anything
+            without my beautiful, strong, and caring wife, so the work is
+            dedicated to her, hence “Arina’s lullaby.”
+          </p>
           <p>
             I’m no musician, so I worked with the incredibly talented Michael
             Blake to develop it into something that others can enjoy too. 🎵
