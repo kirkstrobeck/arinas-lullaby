@@ -510,10 +510,10 @@ ul {
             }}
           >
             <Image
-              height={450}
+              height={440}
               layout="intrinsic"
               src="/images/kay.jpg"
-              width={450}
+              width={440}
             />
           </div>
           <p>
@@ -530,7 +530,7 @@ ul {
           </p>
           <div
             style={{
-              background: '#959893',
+              background: '#3665c5',
               borderRadius: 3,
               lineHeight: 0,
               overflow: 'hidden',
@@ -538,10 +538,10 @@ ul {
             }}
           >
             <Image
-              height={450}
+              height={440}
               layout="intrinsic"
               src="/images/arina.jpg"
-              width={450}
+              width={440}
             />
           </div>
           <p>
