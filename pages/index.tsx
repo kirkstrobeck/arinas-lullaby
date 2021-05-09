@@ -533,7 +533,7 @@ ul {
             without my beautiful, strong, and caring wife, so the work is
             dedicated to her, hence “Arina’s lullaby.”
           </p>
-          <p
+          {/* <p
             style={{
               background: '#272723',
               borderRadius: 3,
@@ -548,7 +548,7 @@ ul {
               src="/images/kay.jpg"
               width={400}
             />
-          </p>
+          </p> */}
           <p>
             I’m no musician, so I worked with the incredibly talented Michael
             Blake to develop it into something that others can enjoy too. 🎵
@@ -557,11 +557,6 @@ ul {
           <hr />
           <ul>
             {[
-              // {
-              //   text: 'DistroKid',
-              //   url:
-              //     'https://distrokid.com/hyperfollow/kirkstrobeck/arinas-lullaby',
-              // },
               {
                 description: 'Musician',
                 text: 'Michael Blake',
