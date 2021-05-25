@@ -2,9 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 
-const shadow = {
-  boxShadow: '0 25px 70px rgba(0, 0, 0, 0.5)',
-};
+const dropShadow = '0 25px 70px rgba(0, 0, 0, 0.5)';
 
 const SoundCloudEmbed = ({
   src,
@@ -23,9 +21,8 @@ const SoundCloudEmbed = ({
       scrolling="no"
       src={src}
       style={{
-        ...shadow,
-
         borderRadius: 5,
+        boxShadow: dropShadow,
       }}
       title={name}
       width="100%"
@@ -457,12 +454,10 @@ ul {
         <div
           className="content-wrapper"
           style={{
-            ...shadow,
-
             background: 'rgba(255, 255, 255, 0.85)',
             border: 'double #fff 3px',
             borderRadius: 5,
-            boxShadow: 'inset 0 5px 60px 0px rgba(255, 255, 255, 1)',
+            boxShadow: `${dropShadow}, inset 0 5px 60px 0px rgba(255, 255, 255, 1)`,
             color: '#033e7a',
             maxWidth: 610,
           }}
