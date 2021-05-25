@@ -469,7 +469,10 @@ ul {
           />
           <div
             className="addthis_inline_share_toolbox"
-            style={{ textAlign: 'center' }}
+            style={{
+              height: 94,
+              textAlign: 'center',
+            }}
           />
           <hr />
           <p
@@ -584,7 +587,7 @@ ul {
                 url: 'https://github.com/kirkstrobeck/arinas-lullaby',
               },
             ].map(({ alert, description, url, text }) => (
-              <li key={url} style={{ margin: '10px 0' }}>
+              <li key={text} style={{ margin: '10px 0' }}>
                 {alert ? (
                   <button
                     onClick={() => {
