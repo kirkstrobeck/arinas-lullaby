@@ -6,11 +6,36 @@ const shadow = {
   boxShadow: '0 25px 70px rgba(0, 0, 0, 0.5)',
 };
 
-const iframe = {
-  ...shadow,
+const SoundCloudEmbed = ({
+  src,
+  href,
+  name,
+}: {
+  src: string;
+  href: string;
+  name: string;
+}) => (
+  <div className="embed">
+    <iframe
+      allow="autoplay"
+      frameBorder="no"
+      height="300"
+      scrolling="no"
+      src={src}
+      style={{
+        ...shadow,
 
-  borderRadius: 5,
-};
+        borderRadius: 5,
+      }}
+      title={name}
+      width="100%"
+    />
+    <div style={{ display: 'none' }}>
+      <a href="https://soundcloud.com/kirk-1-1">kirkstrobeck</a>
+      <a href={href}>{name}</a>
+    </div>
+  </div>
+);
 
 const Base = () => (
   <>
@@ -417,43 +442,17 @@ ul {
       <div>
         <h1>Arina’s lullaby 🌙</h1>
         <div className="embeds">
-          <div className="embed">
-            <iframe
-              allow="autoplay"
-              frameBorder="no"
-              height="300"
-              scrolling="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1042685539&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-              style={iframe}
-              title="Nighttime (feat. Michael Blake)"
-              width="100%"
-            />
-            <div style={{ display: 'none' }}>
-              <a href="https://soundcloud.com/kirk-1-1">kirkstrobeck</a>
-              <a href="https://soundcloud.com/kirk-1-1/daytime-feat-michael-blake">
-                Nighttime (feat. Michael Blake)
-              </a>
-            </div>
-          </div>
+          <SoundCloudEmbed
+            href="https://soundcloud.com/kirk-1-1/daytime-feat-michael-blake"
+            name="Daytime (feat. Michael Blake)"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1042685539&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          />
           <div className="gutter" style={{ width: 50 }} />
-          <div className="embed">
-            <iframe
-              allow="autoplay"
-              frameBorder="no"
-              height="300"
-              scrolling="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1042685590&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-              style={iframe}
-              title="Nighttime (feat. Michael Blake)"
-              width="100%"
-            />
-            <div style={{ display: 'none' }}>
-              <a href="https://soundcloud.com/kirk-1-1">kirkstrobeck</a>
-              <a href="https://soundcloud.com/kirk-1-1/nighttime-feat-michael-blake">
-                Nighttime (feat. Michael Blake)
-              </a>
-            </div>
-          </div>
+          <SoundCloudEmbed
+            href="https://soundcloud.com/kirk-1-1/nighttime-v2-feat-michael-blake"
+            name="Nighttime v2 (feat. Michael Blake)"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1055650609&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          />
         </div>
         <div
           className="content-wrapper"
@@ -560,40 +559,63 @@ ul {
               {
                 description: 'Musician',
                 text: 'Michael Blake',
-                url: 'https://www.youtube.com/channel/UCwMDLy2cEoZIlkI16vBI90A',
+                url: 'https://linktr.ee/mblakemusic',
               },
               {
                 description: 'Download WAV’s',
                 text: 'Album',
-                url:
-                  'https://www.dropbox.com/sh/eehkkp7ailrhyo1/AADt3LRYgBiART2qlzkS_K7ia/Album?dl=0&subfolder_nav_tracking=1',
+                url: 'https://share.getcloudapp.com/4gun0nrj',
               },
               {
                 description: 'Download PDF',
                 text: 'Sheet music',
                 url:
-                  'https://www.dropbox.com/sh/eehkkp7ailrhyo1/AAAggziur-9705HkM3cElQ2Ha?dl=0&preview=SheetMusic.pdf',
+                  'https://p35.p2.n0.cdn.getcloudapp.com/items/d5uABwnZ/613d7eb2-7bb1-4745-bd14-95fbc4cc7dde.pdf?source=client&v=0aec72d4c29d1969d964aba3a5e40540',
               },
               {
+                alert:
+                  'Please email `kirk@strobeck.com,` and I will send them; At around 9GB, they are too big to host online.',
                 description: 'Download Ableton file and stems',
                 text: 'Music source files',
-                url:
-                  'https://www.dropbox.com/sh/eehkkp7ailrhyo1/AABeqxAMZ5Dizp35bBlC6Rmba/Source%20files?dl=0&subfolder_nav_tracking=1',
               },
               {
                 description: 'Download PDF and source(s)',
                 text: 'Cover art',
-                url:
-                  'https://www.dropbox.com/sh/eehkkp7ailrhyo1/AABhSIvc1HahRUNhaVIIz4XGa/Cover%20art?dl=0&subfolder_nav_tracking=1',
+                url: 'https://share.getcloudapp.com/xQu7471Z',
               },
               {
                 description: 'PRs welcome; Improve this site',
                 text: 'GitHub',
                 url: 'https://github.com/kirkstrobeck/arinas-lullaby',
               },
-            ].map(({ description, url, text }) => (
+            ].map(({ alert, description, url, text }) => (
               <li key={url} style={{ margin: '10px 0' }}>
-                <a href={url}>{text}</a>
+                {alert ? (
+                  <button
+                    onClick={() => {
+                      window.alert(alert); // eslint-disable-line no-alert
+                    }}
+                    style={{
+                      appearance: 'none',
+                      background: 'none',
+                      border: 'none',
+                      color: 'inherit',
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
+                      fontSize: 'inherit',
+                      fontStyle: 'inherit',
+                      fontWeight: 'inherit',
+                      margin: 0,
+                      padding: 0,
+                      textDecoration: 'underline',
+                    }}
+                    type="button"
+                  >
+                    {text}
+                  </button>
+                ) : (
+                  <a href={url}>{text}</a>
+                )}
                 {description && (
                   <span
                     style={{
